@@ -1,0 +1,12 @@
+create sequence mnt_scheme_seq
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1
+increment by 1
+cache 10;
+create or replace trigger mnt_scheme_increase
+before insert on mnt_scheme
+for each row
+  begin
+    select mnt_scheme_seq.nextval into :New.PK_ID from dual;
+  end;

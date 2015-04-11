@@ -1,0 +1,18 @@
+select replace('PK_ID,T_NAME,T_AGE', ',', '||''-''||') from xh_test1 t;
+
+select PK_ID||'-'||T_NAME||'-'||T_AGE from xh_test1;
+select PK_ID||'-'||T_NAME||'-'||T_AGE from xh_test2;
+select PK_ID||'-'||T_NAME, ora_hash(PK_ID||T_NAME, power(2,30), 0) from XH_TEST1 order by PK_ID,T_NAME;
+select PK_ID||'-'||T_NAME, ora_hash(PK_ID||T_NAME, power(2,30), 0) from XH_TEST2 order by PK_ID,T_NAME;
+insert into xh_test1 values(4,'test1', 100);
+commit;
+select * from ims3.ims3_file_info
+create table test5(PK_ID number primary key,T_NAME varchar2(100), STAMP timestamp(6),T_AGE number,  CREATE_DATE date);
+commit;
+insert into test5 values(2,'zz','06-4ÔÂ -11 04.03.19.000000 ÏÂÎç',1000,to_date('2011/4/6','yyyy-MM-dd'));
+commit;
+select * from test3;
+select * from test4;
+select * from test5;
+select value from nls_session_parameters where parameter = 'nls_timestamp_format'
+SELECT VALUE FROM NLS_SESSION_PARAMETERS WHERE PARAMETER = 'NLS_TIMESTAMP_FORMAT'

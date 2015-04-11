@@ -1,0 +1,278 @@
+.ui-multiselect
+{
+    border: 1px solid gainsboro; 
+    background: #d7ebf9 url(images/choose_bg.png) 50% 50% repeat-x; 
+    font-weight:normal; color:#333;font-size: 12px;
+    background: #fff; 
+    line-height:16px;
+    -moz-border-radius-bottomright: 1px;
+    -webkit-border-bottom-right-radius: 1px;
+    -khtml-border-bottom-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    -moz-border-radius-bottomleft: 1px;
+    -webkit-border-bottom-left-radius: 1px;
+    -khtml-border-bottom-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    -moz-border-radius-topright: 1px;
+    -webkit-border-top-right-radius: 1px;
+    -khtml-border-top-right-radius: 1px;
+    border-top-right-radius: 1px;
+    -moz-border-radius-topleft: 1px;
+    -webkit-border-top-left-radius: 1px;
+    -khtml-border-top-left-radius: 1px;
+    border-top-left-radius: 1px;
+    
+}
+
+.hasDatepicker
+{
+    border: 1px solid gainsboro; 
+    text-align:center;
+}
+
+.ui-multiselect-menu 
+{
+    -moz-border-radius-bottomright: 1px;
+    -webkit-border-bottom-right-radius: 1px;
+    -khtml-border-bottom-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    -moz-border-radius-bottomleft: 1px;
+    -webkit-border-bottom-left-radius: 1px;
+    -khtml-border-bottom-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    -moz-border-radius-topright: 1px;
+    -webkit-border-top-right-radius: 1px;
+    -khtml-border-top-right-radius: 1px;
+    border-top-right-radius: 1px;
+    -moz-border-radius-topleft: 1px;
+    -webkit-border-top-left-radius: 1px;
+    -khtml-border-top-left-radius: 1px;
+    border-top-left-radius: 1px;
+}
+
+.ui-icon-triangle-2-n-s {
+    background-position: -66px -16px;
+}
+
+.ui-widget-content {
+    /*border-bottom:1px solid #aaaaaa;
+    border-left:1px solid #aaaaaa;
+    border-right:1px solid #aaaaaa;
+    color: #362B36;
+    background: #F2F5F7 url(images/ui-bg_highlight-hard_100_f2f5f7_1x100.png) 50% top repeat-x;*/
+    background:white;
+    color: #404040;
+}
+
+html {
+color: #404040;
+}
+
+.ui-multiselect-checkboxes li {
+    color:#333;
+    font-size: 12px;
+}
+
+.fw
+{
+    /*width:350px; */
+    width:253px;   
+}
+
+.ui-multiselect-filter input {
+    border: 1px solid #393939;
+}
+
+.ui-corner-all,.ui-state-active
+{
+    -moz-border-radius-bottomright: 1px;
+    -webkit-border-bottom-right-radius: 1px;
+    -khtml-border-bottom-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    -moz-border-radius-bottomleft: 1px;
+    -webkit-border-bottom-left-radius: 1px;
+    -khtml-border-bottom-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    -moz-border-radius-topright: 1px;
+    -webkit-border-top-right-radius: 1px;
+    -khtml-border-top-right-radius: 1px;
+    border-top-right-radius: 1px;
+    -moz-border-radius-topleft: 1px;
+    -webkit-border-top-left-radius: 1px;
+    -khtml-border-top-left-radius: 1px;
+    border-top-left-radius: 1px;    
+}
+
+
+.ui-widget-header {
+    font-weight:normal;
+    font-size: 12px;
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url(images/ui-icons_3d80b3_256x240.png);
+}
+.ui-widget-content .ui-icon {
+    background-image: url(images/ui-icons_3d80b3_256x240.png);
+}
+
+.ui-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(images/ui-icons_3d80b3_256x240.png);
+}
+
+.ui-icon-closethick
+{
+    width:1px;
+}
+
+.ui-dialog-titlebar-close .ui-icon-closethick
+{
+    width:16px;
+}
+
+.ui-icon-check
+{
+    width:1px;
+}
+
+.ui-icon-circle-close
+{
+   width:1px; 
+}
+
+.ui-multiselect-checkboxes .ui-state-active
+{
+    border: 0px solid #2694E8;
+    background: url(images/choose_frst_bg.png) 50% 50% repeat-x;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    font-weight:normal;
+}
+
+.ui-widget-content .ui-state-default{
+    /*border: 1px solid #AED0EA;*/
+    border: 1px solid #C6D8EF;
+    background: #DEEDF7 url(images/ui-bg_highlight-soft_100_deedf7_1x100.png) 50% 50% repeat-x;
+    /*font-weight: bold;
+    color: #266392;*/
+    /*background: #DEEDF7 url(images/u4.gif) 50% 50% repeat-x;*/
+    color: #266298;
+    font-size: 13px;
+    font-weight: 500;
+    font: 12px/1.231 tahoma,arial,ËÎÌåb8b\4f53;
+}
+
+display ui-jqgrid-btable, .ui-widget-content .jqgrow ui-row-ltr .ui-state-hover
+{
+    border: 1px solid #F9DD34;
+    background: #FFEF8F url(images/ui-bg_highlight-soft_25_ffef8f_1x100.png) 50% top repeat-x; 
+}
+
+.ui-widget-content {
+    border: 1px solid #aed0ea;
+}
+
+#divRelAdPlanConsumeSum,#divRelAdRechargeReceiptSum,#divRelAdPlanningReceiptSum,#divRelADReturnSum,#divRelSettlementSum,#divRelAffirmSum,#divRelReceivableSum,#divRelInvoiceApplySum,#divRelInvoiceSum,#divRelReceiptApplySum,#divRelADReceiptApplySum
+{
+    margin-right:10px;
+}
+
+.ui-datepicker-calendar .ui-state-default
+{
+    font-weight:normal;
+    font-size:12px;
+}
+
+.ui-datepicker table 
+{
+    font-weight:normal;
+    font-size:12px; 
+}
+
+.ui-jqgrid .ui-icon-asc {
+    margin-top: -5px;
+    height: 12px;
+    margin-left:1px;
+}
+
+.ui-jqgrid-htable
+{
+    font-weight:normal;
+}
+
+.ui-jqgrid-hbox
+{
+    font-weight:normal;
+}
+
+.ui-widget-content {
+    background:white;
+    color: #222;
+}
+
+.alinkbtn
+{
+    float:right;
+    right:5px;
+    background-image: url(images/ui-icons_3d80b3_256x240.png);
+    background-position: -96px -192px;
+    width: 16px;
+    height: 16px;
+    margin-top:8px;
+}
+
+*+html .alinkbtn
+{
+    float:right;
+    right:5px;
+    background-image: url(images/ui-icons_3d80b3_256x240.png);
+    background-position: -96px -192px;
+    width: 16px;
+    height: 16px;
+    margin-top:-20px;
+}
+
+#settlementBoxId .ui-widget-header {
+    border: 0px solid #aed0ea;
+    background:white;
+    color: #222222;
+    font-weight: bold;
+}
+
+#settlementBoxId .ui-tabs .ui-tabs-panel
+{
+    padding: 0em 0.18em;
+}
+
+#settlementBoxId  #tabs
+{
+    border: 0px solid #aed0ea;
+}
+
+
+#boxControlId .ui-widget-header {
+    border: 0px solid #aed0ea;
+    background:white;
+    color: #222222;
+    font-weight: bold;
+}
+
+#boxControlId .ui-jqgrid-titlebar
+{
+    background:#e6f1fb;
+    border-bottom: 1px solid #aed0ea;
+    font-weight:normal;
+}
+
+#boxControlId .ui-tabs .ui-tabs-panel
+{
+    padding: 0em 0.18em;
+}
+
+#boxControlId  #tabs
+{
+    border: 0px solid #aed0ea;
+}

@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9207148-A35D-4936-B6A7-F4C99C5EAD0E}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HZAU.GP.DataMonitor.Web</RootNamespace>
+    <AssemblyName>HZAU.GP.DataMonitor.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\webapi\packages\Ninject.MVC4.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DataMonitorController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inject\ModelInjectModule.cs" />
+    <Compile Include="Models\DataMonitorModel.cs" />
+    <Compile Include="Models\IDataMonitorModel.cs" />
+    <Compile Include="Models\WCFClientProxy\IWCFClientProxy.cs" />
+    <Compile Include="Models\WCFClientProxy\WCFClientProxy.cs" />
+    <Compile Include="Models\WCFProxyModelsBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\img\analyse-next.png" />
+    <Content Include="Content\img\background.jpg" />
+    <Content Include="Content\img\banner_fms.jpg" />
+    <Content Include="Content\img\biao1.png" />
+    <Content Include="Content\img\biao2.png" />
+    <Content Include="Content\img\biao3.png" />
+    <Content Include="Content\img\biao4.png" />
+    <Content Include="Content\img\bing1.png" />
+    <Content Include="Content\img\bing2.png" />
+    <Content Include="Content\img\bing3.png" />
+    <Content Include="Content\img\bing4.png" />
+    <Content Include="Content\img\blockBtns _icon.png" />
+    <Content Include="Content\img\blockBtn_bg.png" />
+    <Content Include="Content\img\blockBtn_Gift.png" />
+    <Content Include="Content\img\blockBtn_hover_bg.png" />
+    <Content Include="Content\img\blockBtn_Other.png" />
+    <Content Include="Content\img\blockBtn_Trafic.png" />
+    <Content Include="Content\img\blockBtn_Travel.png" />
+    <Content Include="Content\img\block_bg.jpg" />
+    <Content Include="Content\img\blueBtn.png" />
+    <Content Include="Content\img\blueBtn_.png" />
+    <Content Include="Content\img\blueline.png" />
+    <Content Include="Content\img\bottom.gif" />
+    <Content Include="Content\img\calendar.gif" />
+    <Content Include="Content\img\closeBtn.png" />
+    <Content Include="Content\img\conditionSetting.gif" />
+    <Content Include="Content\img\csrIcon.png" />
+    <Content Include="Content\img\currentPointer.gif" />
+    <Content Include="Content\img\ddlsetting.gif" />
+    <Content Include="Content\img\demoIcon.png" />
+    <Content Include="Content\img\detail.png" />
+    <Content Include="Content\img\doExcute.gif" />
+    <Content Include="Content\img\DonePointer.gif" />
+    <Content Include="Content\img\down.png" />
+    <Content Include="Content\img\dropdown_btn.gif" />
+    <Content Include="Content\img\dropdown_btn.png" />
+    <Content Include="Content\img\dropdown_btn1.png" />
+    <Content Include="Content\img\email.png" />
+    <Content Include="Content\img\eventnav.png" />
+    <Content Include="Content\img\event_config.png" />
+    <Content Include="Content\img\event_period.png" />
+    <Content Include="Content\img\event_process_cfg.png" />
+    <Content Include="Content\img\event_pro_tpl.png" />
+    <Content Include="Content\img\ExcutePointer.gif" />
+    <Content Include="Content\img\expand.png" />
+    <Content Include="Content\img\expressBtn_bg.png" />
+    <Content Include="Content\img\filter.jpg" />
+    <Content Include="Content\img\finance.gif" />
+    <Content Include="Content\img\floatTips_bg.png" />
+    <Content Include="Content\img\flow_steps_bg.png" />
+    <Content Include="Content\img\functionlinks\1.png" />
+    <Content Include="Content\img\functionlinks\10.png" />
+    <Content Include="Content\img\functionlinks\11.png" />
+    <Content Include="Content\img\functionlinks\12.png" />
+    <Content Include="Content\img\functionlinks\13.png" />
+    <Content Include="Content\img\functionlinks\14.png" />
+    <Content Include="Content\img\functionlinks\2.png" />
+    <Content Include="Content\img\functionlinks\3.png" />
+    <Content Include="Content\img\functionlinks\4.png" />
+    <Content Include="Content\img\functionlinks\5.png" />
+    <Content Include="Content\img\functionlinks\6.png" />
+    <Content Include="Content\img\functionlinks\7.png" />
+    <Content Include="Content\img\functionlinks\8.png" />
+    <Content Include="Content\img\functionlinks\9.png" />
+    <Content Include="Content\img\goallow.png" />
+    <Content Include="Content\img\grayBtn.png" />
+    <Content Include="Content\img\greenBtn.png" />
+    <Content Include="Content\img\header_bg.jpg" />
+    <Content Include="Content\img\header_bg.png" />
+    <Content Include="Content\img\header_bg2.png" />
+    <Content Include="Content\img\helpIcon.png" />
+    <Content Include="Content\img\history.png" />
+    <Content Include="Content\img\hot.gif" />
+    <Content Include="Content\img\hrc-dividerline.png" />
+    <Content Include="Content\img\icon-kind.png" />
+    <Content Include="Content\img\icon_pipelinegroup_24.png" />
+    <Content Include="Content\img\ico_arrow.png" />
+    <Content Include="Content\img\ico_arrow_back.png" />
+    <Content Include="Content\img\ico_table.gif" />
+    <Content Include="Content\img\in.png" />
+    <Content Include="Content\img\index-1.png" />
+    <Content Include="Content\img\index-2.png" />
+    <Content Include="Content\img\index-3.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo1.png" />
+    <Content Include="Content\img\logo2.png" />
+    <Content Include="Content\img\minus.gif" />
+    <Content Include="Content\img\navMoreBtn.png" />
+    <Content Include="Content\img\navMoreBtn_mouseon.png" />
+    <Content Include="Content\img\nav_bg.jpg" />
+    <Content Include="Content\img\new.gif" />
+    <Content Include="Content\img\new_skin.png" />
+    <Content Include="Content\img\NoneExcute.gif" />
+    <Content Include="Content\img\noticeTips.png" />
+    <Content Include="Content\img\notice_icon.png" />
+    <Content Include="Content\img\okIcon.gif" />
+    <Content Include="Content\img\operateTips.gif" />
+    <Content Include="Content\img\pagination\button_a_bg.gif" />
+    <Content Include="Content\img\pagination\button_plain_hover.png" />
+    <Content Include="Content\img\pagination\button_span_bg.gif" />
+    <Content Include="Content\img\pagination\condition_add.gif" />
+    <Content Include="Content\img\pagination\condition_remove.gif" />
+    <Content Include="Content\img\pagination\download.jpg" />
+    <Content Include="Content\img\pagination\download.png" />
+    <Content Include="Content\img\pagination\filesave.png" />
+    <Content Include="Content\img\pagination\pagination_first.gif" />
+    <Content Include="Content\img\pagination\pagination_last.gif" />
+    <Content Include="Content\img\pagination\pagination_load.gif" />
+    <Content Include="Content\img\pagination\pagination_load.png" />
+    <Content Include="Content\img\pagination\pagination_next.gif" />
+    <Content Include="Content\img\pagination\pagination_prev.gif" />
+    <Content Include="Content\img\pagination\pay.jpg" />
+    <Content Include="Content\img\pen.jpg" />
+    <Content Include="Content\img\plus.gif" />
+    <Content Include="Content\img\rightMemu_bg.png" />
+    <Content Include="Content\img\rtx.png" />
+    <Content Include="Content\img\sblueBtn.png" />
+    <Content Include="Content\img\sblueBtn_on.png" />
+    <Content Include="Content\img\search.gif" />
+    <Content Include="Content\img\sgrayBtn.png" />
+    <Content Include="Content\img\sgrayBtn_on.png" />
+    <Content Include="Content\img\sgreenBtn.png" />
+    <Content Include="Content\img\shadow_btm_bg.jpg" />
+    <Content Include="Content\img\shadow_rgt_bg.jpg" />
+    <Content Include="Content\img\sms_bg.png" />
+    <Content Include="Content\img\SYS001.png" />
+    <Content Include="Content\img\s_condition_add.gif" />
+    <Content Include="Content\img\tab_bg.gif" />
+    <Content Include="Content\img\tab_bg100.gif" />
+    <Content Include="Content\img\tab_on_left.gif" />
+    <Content Include="Content\img\tab_on_middle.gif" />
+    <Content Include="Content\img\tab_on_right.gif" />
+    <Content Include="Content\img\tfl-sprite.png" />
+    <Content Include="Content\img\top_rtx.png" />
+    <Content Include="Content\img\top_rtx_female.png" />
+    <Content Include="Content\img\viewExcute.gif" />
+    <Content Include="Content\img\zhu1.png" />
+    <Content Include="Content\img\zhu2.png" />
+    <Content Include="Content\img\zhu3.png" />
+    <Content Include="Content\img\zhu4.png" />
+    <Content Include="Content\Styles\fms.controls.css" />
+    <Content Include="Content\Styles\fms.core.css" />
+    <Content Include="Content\Styles\fms.full.core.css" />
+    <Content Include="Content\Styles\fms.input.css" />
+    <Content Include="Content\Styles\home.css" />
+    <Content Include="Content\Styles\ims.all.css" />
+    <Content Include="Content\Styles\jqueryui\images\chosen-sprite.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.multiselect.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.multiselect.filter.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.accordion.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.all.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.autocomplete.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.base.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.button.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.core.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\choose_bg.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\choose_frst_bg.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\choose_sprite.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\u4.gif" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.cupertino\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.datepicker.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.dialog.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.flick\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_diagonal-maze_20_6e4f1c_10x10.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_diagonal-maze_40_000000_10x10.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_10_eceadf_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_10_f8f7f6_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_15_eceadf_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_15_f7f3de_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_15_ffffff_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_65_654b24_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-bg_fine-grain_68_b83400_60x60.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_3572ac_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_8c291d_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_b83400_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_fbdb93_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.pepper-grinder\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.progressbar.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.raymond\jquery-ui-raymond.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.resizable.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.selectable.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.slider.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.tabs.css" />
+    <Content Include="Content\Styles\jqueryui\jquery.ui.theme.css" />
+    <Content Include="Content\Styles\NewV4\components.css" />
+    <Content Include="Content\Styles\NewV4\fms.desktop.components.css" />
+    <Content Include="Content\Styles\NewV4\home.css" />
+    <Content Include="Content\Styles\NewV4\images\404.png" />
+    <Content Include="Content\Styles\NewV4\images\advanceBg.png" />
+    <Content Include="Content\Styles\NewV4\images\advanceContentOpenBg.png" />
+    <Content Include="Content\Styles\NewV4\images\advanceLayerBg.png" />
+    <Content Include="Content\Styles\NewV4\images\advanceOpenBg.png" />
+    <Content Include="Content\Styles\NewV4\images\alert.jpg" />
+    <Content Include="Content\Styles\NewV4\images\banshizhongxin.png" />
+    <Content Include="Content\Styles\NewV4\images\beyourself.png" />
+    <Content Include="Content\Styles\NewV4\images\biaoge.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_add.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_adjust.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_AdPlaning_Receipt_Search.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_AdPlaning_Search.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_Affirm_Serach.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_edit.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_InvoiceApply_Input.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_project.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_Receipt_Apply.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_Receipt_Search.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_Receivable_Search.png" />
+    <Content Include="Content\Styles\NewV4\images\blockBtn_Settlement_Serach.png" />
+    <Content Include="Content\Styles\NewV4\images\border.png" />
+    <Content Include="Content\Styles\NewV4\images\bottom.gif" />
+    <Content Include="Content\Styles\NewV4\images\controls.png" />
+    <Content Include="Content\Styles\NewV4\images\csrIcon.png" />
+    <Content Include="Content\Styles\NewV4\images\eventnav.png" />
+    <Content Include="Content\Styles\NewV4\images\event_config.png" />
+    <Content Include="Content\Styles\NewV4\images\event_period.png" />
+    <Content Include="Content\Styles\NewV4\images\event_process_cfg.png" />
+    <Content Include="Content\Styles\NewV4\images\event_pro_tpl.png" />
+    <Content Include="Content\Styles\NewV4\images\fb.png" />
+    <Content Include="Content\Styles\NewV4\images\filter.jpg" />
+    <Content Include="Content\Styles\NewV4\images\fmslogo.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-button.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-colorIcon.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-component.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-component_home.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-dividerline.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-feedback.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-grid-spliter.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-guider.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-icon-controls.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-icons.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-item-seperator.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-leftNavTitlebg.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-loading.gif" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q1.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q10.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q10Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q11.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q11Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q12.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q12Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q13.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q13Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q14.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q14Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q15.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q15Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q1Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q2.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q2Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q3.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q3Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q4.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q4Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q5.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q5Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q6.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q6Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q7.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q7Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q8.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q8Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q9.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-q9Hover.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-qadd.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-symbolize-icons.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-toggle-collapse.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-toggle-expand.png" />
+    <Content Include="Content\Styles\NewV4\images\hrc-topNavBg.png" />
+    <Content Include="Content\Styles\NewV4\images\hrlogo.png" />
+    <Content Include="Content\Styles\NewV4\images\hrservice.jpg" />
+    <Content Include="Content\Styles\NewV4\images\icon-kind.png" />
+    <Content Include="Content\Styles\NewV4\images\loading.gif" />
+    <Content Include="Content\Styles\NewV4\images\logo.png" />
+    <Content Include="Content\Styles\NewV4\images\more.JPG" />
+    <Content Include="Content\Styles\NewV4\images\noright.png" />
+    <Content Include="Content\Styles\NewV4\images\overlay.png" />
+    <Content Include="Content\Styles\NewV4\images\overlay2.png" />
+    <Content Include="Content\Styles\NewV4\images\p1.jpg" />
+    <Content Include="Content\Styles\NewV4\images\p2.jpg" />
+    <Content Include="Content\Styles\NewV4\images\p3.jpg" />
+    <Content Include="Content\Styles\NewV4\images\p4.jpg" />
+    <Content Include="Content\Styles\NewV4\images\p5.jpg" />
+    <Content Include="Content\Styles\NewV4\images\p6.jpg" />
+    <Content Include="Content\Styles\NewV4\images\pagination.png" />
+    <Content Include="Content\Styles\NewV4\images\RC_Process.png" />
+    <Content Include="Content\Styles\NewV4\images\repeat-bg-x.png" />
+    <Content Include="Content\Styles\NewV4\images\repeat-x.png" />
+    <Content Include="Content\Styles\NewV4\images\settings.png" />
+    <Content Include="Content\Styles\NewV4\images\slide_example.png" />
+    <Content Include="Content\Styles\NewV4\images\spinner.gif" />
+    <Content Include="Content\Styles\NewV4\images\sprites.png" />
+    <Content Include="Content\Styles\NewV4\images\step1Tips.png" />
+    <Content Include="Content\Styles\NewV4\images\step2Tips.png" />
+    <Content Include="Content\Styles\NewV4\images\step3Tips.png" />
+    <Content Include="Content\Styles\NewV4\images\tijian.png" />
+    <Content Include="Content\Styles\NewV4\images\treasuremapTips.png" />
+    <Content Include="Content\Styles\NewV4\images\user.gif" />
+    <Content Include="Content\Styles\NewV4\images\videohelp.png" />
+    <Content Include="Content\Styles\NewV4\images\yuangongpinggu.png" />
+    <Content Include="Content\Styles\NewV4\layoutcommon.css" />
+    <Content Include="Content\Styles\NewV4\subhome.css" />
+    <Content Include="Content\Styles\subhome.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Script\global.js" />
+    <Content Include="Script\jqGrid\css\ui.jqgrid.css" />
+    <Content Include="Script\jqGrid\js\Changes.txt" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-ar.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-bg.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-bg1251.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-cat.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-cn.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-cs.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-da.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-de.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-dk.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-el.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-en.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-es.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-fa.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-fi.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-fr.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-gl.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-he.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-hr.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-hr1250.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-hu.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-id.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-is.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-it.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-ja.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-kr.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-lt.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-mne.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-nl.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-no.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-pl.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-pt-br.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-pt.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-ro.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-ru.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-sk.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-sr.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-sv.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-th.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-tr.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-tw.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-ua.js" />
+    <Content Include="Script\jqGrid\js\i18n\grid.locale-vi.js" />
+    <Content Include="Script\jqGrid\js\install.txt" />
+    <Content Include="Script\jqGrid\js\jquery-1.11.0.min.js" />
+    <Content Include="Script\jqGrid\js\jquery.jqGrid.min.js" />
+    <Content Include="Script\jqGrid\js\jquery.jqGrid.src.js" />
+    <Content Include="Script\jqGrid\plugins\grid.addons.js" />
+    <Content Include="Script\jqGrid\plugins\grid.postext.js" />
+    <Content Include="Script\jqGrid\plugins\grid.setcolumns.js" />
+    <Content Include="Script\jqGrid\plugins\jquery.contextmenu.js" />
+    <Content Include="Script\jqGrid\plugins\jquery.searchFilter.js" />
+    <Content Include="Script\jqGrid\plugins\jquery.tablednd.js" />
+    <Content Include="Script\jqGrid\plugins\searchFilter.css" />
+    <Content Include="Script\jqGrid\plugins\ui.multiselect.css" />
+    <Content Include="Script\jqGrid\plugins\ui.multiselect.js" />
+    <Content Include="Script\jqGrid\src\css\ui.jqgrid.css" />
+    <Content Include="Script\jqGrid\src\css\ui.multiselect.css" />
+    <Content Include="Script\jqGrid\src\grid.base.js" />
+    <Content Include="Script\jqGrid\src\grid.celledit.js" />
+    <Content Include="Script\jqGrid\src\grid.common.js" />
+    <Content Include="Script\jqGrid\src\grid.custom.js" />
+    <Content Include="Script\jqGrid\src\grid.filter.js" />
+    <Content Include="Script\jqGrid\src\grid.formedit.js" />
+    <Content Include="Script\jqGrid\src\grid.grouping.js" />
+    <Content Include="Script\jqGrid\src\grid.import.js" />
+    <Content Include="Script\jqGrid\src\grid.inlinedit.js" />
+    <Content Include="Script\jqGrid\src\grid.jqueryui.js" />
+    <Content Include="Script\jqGrid\src\grid.loader.js" />
+    <Content Include="Script\jqGrid\src\grid.pivot.js" />
+    <Content Include="Script\jqGrid\src\grid.subgrid.js" />
+    <Content Include="Script\jqGrid\src\grid.tbltogrid.js" />
+    <Content Include="Script\jqGrid\src\grid.treegrid.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-ar.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-bg.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-bg1251.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-cat.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-cn.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-cs.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-da.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-de.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-dk.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-el.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-en.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-es.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-fa.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-fi.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-fr.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-gl.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-he.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-hr.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-hr1250.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-hu.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-id.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-is.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-it.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-ja.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-kr.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-lt.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-mne.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-nl.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-no.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-pl.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-pt-br.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-pt.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-ro.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-ru.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-sk.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-sr.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-sv.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-th.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-tr.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-tw.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-ua.js" />
+    <Content Include="Script\jqGrid\src\i18n\grid.locale-vi.js" />
+    <Content Include="Script\jqGrid\src\jqDnR.js" />
+    <Content Include="Script\jqGrid\src\jqModal.js" />
+    <Content Include="Script\jqGrid\src\jquery.fmatter.js" />
+    <Content Include="Script\jqGrid\src\jquery.jqGrid.js" />
+    <Content Include="Script\jqGrid\src\JsonXml.js" />
+    <Content Include="Script\jquery-ui.js" />
+    <Content Include="Script\jquery.multiselect.js" />
+    <Content Include="Script\jquery\Changes.txt" />
+    <Content Include="Script\jquery\i18n\grid.locale-ar.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-bg.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-bg1251.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-cat.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-cn.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-cs.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-da.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-de.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-dk.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-el.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-en.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-es.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-fa.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-fi.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-fr.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-gl.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-he.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-hr.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-hr1250.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-hu.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-id.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-is.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-it.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-ja.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-kr.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-lt.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-mne.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-nl.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-no.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-pl.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-pt-br.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-pt.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-ro.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-ru.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-sk.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-sr.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-sv.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-th.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-tr.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-tw.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-ua.js" />
+    <Content Include="Script\jquery\i18n\grid.locale-vi.js" />
+    <Content Include="Script\jquery\install.txt" />
+    <Content Include="Script\jquery\jquery-1.11.0.min.js" />
+    <Content Include="Script\jquery\jquery.jqGrid.min.js" />
+    <Content Include="Script\jquery\jquery.jqGrid.src.js" />
+    <Content Include="Script\jquery.multiselect.filter.js" />
+    <Content Include="Script\toJSON.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_viewstart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{764ab86e-c122-470a-b741-b8be7ec1d289}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.Contract\Service.Contract.csproj">
+      <Project>{4e933d78-af55-413c-a259-604746cf0225}</Project>
+      <Name>Service.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DataMonitor\AddCheckScheme.cshtml" />
+    <Content Include="Views\DataMonitor\ExecuteCheckScheme.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DataMonitor\AddCheckScheme.cshtml" />
+    <Content Include="Views\Shared\DataMonitor\ExecuteCheckSchemeCriteria.cshtml" />
+    <Content Include="Views\Shared\DataMonitor\JQGridCheckSchemeOpts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\img\sgrayBtn.png.wtf" />
+    <Content Include="Content\img\Thumbs.db" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57145</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9999/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

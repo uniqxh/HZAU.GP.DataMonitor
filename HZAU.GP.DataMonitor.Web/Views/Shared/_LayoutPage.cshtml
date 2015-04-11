@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Styles/fms.full.core.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/NewV4/layoutcommon.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/NewV4/components.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/NewV4/fms.desktop.components.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/fms.input.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/fms.controls.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/ims.all.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/jqueryui/jquery.ui.all.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/jqueryui/jquery.multiselect.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/jqueryui/jquery.multiselect.filter.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Styles/jqueryui/jquery.ui.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="~/Script/jqGrid/css/ui.jqgrid.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Script/jquery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="~/Script/jquery/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="~/Script/jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="~/Script/jquery-ui.js" ></script>
+    <script type="text/javascript" src="~/Script/jquery.multiselect.js" ></script>
+    <script type="text/javascript" src="~/Script/jquery.multiselect.filter.js" ></script>
+    <script type="text/javascript" src="~/Script/global.js" ></script>
+    <script type="text/javascript"src="~/Script/toJSON.js" ></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <section>
+            @RenderBody()
+        </section>
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

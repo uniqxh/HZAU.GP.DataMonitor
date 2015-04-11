@@ -1,0 +1,7 @@
+.ui-multiselect-hasfilter ul { position:relative; top:2px }
+.ui-multiselect-filter { float:left; margin-right:10px; font-size:11px }
+.ui-multiselect-filter input { width:200px; font-size:10px; margin-left:0px; height:15px; padding:2px; border:1px solid #a6a6a6; -webkit-appearance:textfield; -webkit-box-sizing:content-box; }
+.ui-multiselect-filter input
+{
+    background: white url(images/chosen-sprite.png) no-repeat 92% -22px;
+}

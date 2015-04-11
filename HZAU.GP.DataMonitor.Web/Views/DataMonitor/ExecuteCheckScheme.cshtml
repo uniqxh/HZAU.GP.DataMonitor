@@ -1,0 +1,16 @@
+﻿@{ViewBag.Title = "执行检查方案";}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "main mainInput" }))
+{
+    <div class="floatbuttonlist">
+        <input id="btnExecuteId" name="btnExecute" type="button" value="执行" class="greenBtn" />
+    </div>
+    @Html.Partial("DataMonitor/ExecuteCheckSchemeCriteria")
+}
+<div id="boxMain">
+    <div class="boxcontent" style="height: 80%;">
+        <table cellpadding="0" cellspacing="0" border="1" class="display" id="tbSearchList">
+        </table>
+    </div>
+</div>
+
+@Html.Partial("DataMonitor/JQGridCheckSchemeOpts")

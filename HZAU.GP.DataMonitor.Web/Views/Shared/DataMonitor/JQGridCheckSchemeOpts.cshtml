@@ -1,0 +1,85 @@
+﻿<section>
+    <script type="text/javascript">
+        var default_ColNames = [
+           "RowNum",
+           "操作",
+           "方案编号",
+           "方案名称",
+           "所属模块",
+           "脚本类型",
+           "脚本",
+           "执行方式",
+           "通知方式",
+           "通知相关人",
+           "执行开始时间",
+           "操作",
+           "是否有效",
+           "时间戳",
+           "pkid"
+        ];
+        var default_ColModel = [
+           { name: 'Inddex', index: 'index', hidden: true },
+           {
+               name: 'DISABLE', index: 'DISABLE', align: 'center', width: 60,
+               formatter: function (val, col, row) {
+                   var PKID = "'" + row.PK_ID + "'";
+                   var stamp = "'" + getStringFromTime(row.STAMP) + "'";
+                   if (row.IS_EFFECTIVE == "1") {
+                       var aHtml = '<a disabled onclick="setDisable(' + stamp + ',' + PKID + ')">禁用</a>';
+                       return aHtml;
+                   }
+                   else {
+                       var aHtml = '<a disabled onclick="setEnable(' + stamp + ',' + PKID + ')">启用</a>';
+                       return aHtml;
+                   }
+               }
+           },
+           { name: 'SCHEME_ID', index: 'SCHEME_ID', align: 'center', width: 150 },
+           { name: 'SCHEME_NAME', index: 'SCHEME_NAME', width: 150 },
+           { name: 'MODULE_ID', index: 'MODULE_ID', align: 'center', width: 100 },
+           {
+               name: 'SQL_TYPE_NAME', index: 'SQL_TYPE_NAME', align: 'center', width: 60,
+               formatter: function (val, col, row) {
+                   var SQL_TYPE_ID = row.SQL_TYPE_ID;
+                   if (SQL_TYPE_ID == "sql") return "SQL脚本";
+                   else return "存储过程";
+               }
+           },
+           { name: 'SQL_TEXT', index: 'SQL_TEXT', align: 'center', width: 180 },
+           {
+               name: 'EXECUTE_TYPE_NAME', index: 'EXECUTE_TYPE_NAME', align: 'center', width: 60,
+               formatter: function (val, col, row) {
+                   var EXECUTE_TYPE_ID = row.EXECUTE_TYPE_ID;
+                   if (EXECUTE_TYPE_ID == "1") return "手动";
+                   else return "自动";
+               }
+           },
+           {
+               name: 'NOTICE_TYPE_NAME', index: 'NOTICE_TYPE_NAME', align: 'center', width: 60,
+               formatter: function (val, col, row) {
+                   var NOTICE_TYPE_ID = row.NOTICE_TYPE_ID;
+                   if (NOTICE_TYPE_ID == "mail") return "邮件";
+               }
+           },
+           { name: 'NOTICE_TO', index: 'NOTICE_TO', align: 'left' },
+           {
+               name: 'START_TIME', index: 'START_TIME', sortable: false, align: 'center', width: 150,
+               formatter: 'date', formatoptions: global_Options.formatOptions.dateTimeFormat
+           },
+           {
+               name: 'FileDownLoad', index: 'FileDownLoad', sortable: false, align: 'center', width: 80,
+               formatter: function (val, col, row) {
+                   if (row.IS_EFFECTIVE == "1") {
+                       var pkId = "'" + row.PK_ID + "'";
+                       var aHtml = '<a disabled onclick="downloadFile(this, ' + pkId + ')">下载</a>';
+                       return aHtml;
+                   }
+                   return "";
+               }
+           },
+           { name: 'IS_EFFECTIVE', index: 'IS_EFFECTIVE', hidden: true },
+           { name: 'STAMP', index: 'STAMP', hidden: true, formatter: 'date', formatoptions: global_Options.formatOptions.dateTimeFormat },
+           { name: 'PK_ID', index: 'PK_ID', hidden: true }
+        ];
+    </script>
+</section>

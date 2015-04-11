@@ -1,0 +1,519 @@
+
+.hrc-clearBoth {
+    clear: both;
+}
+.hrc-quickEntrance li
+{
+    width: 180px;
+}
+.hrc-entrance-q1:hover
+{
+    background-image: url('images/blockBtn_edit.png');
+}
+.hrc-entrance-q1
+{
+    background-image: url('images/blockBtn_edit.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.hrc-entrance-q2:hover
+{
+    background-image: url('images/blockBtn_add.png');
+}
+.hrc-entrance-q2
+{
+    background-image: url('images/blockBtn_add.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.hrc-entrance-q3:hover
+{
+    background-image: url('images/blockBtn_adjust.png');
+}
+.hrc-entrance-q3
+{
+    background-image: url('images/blockBtn_adjust.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.hrc-entrance-q4:hover
+{
+    background-image: url('images/blockBtn_project.png');
+}
+.hrc-entrance-q4
+{
+    background-image: url('images/blockBtn_project.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.hrc-entrance-q5:hover
+{
+    background-image: url('images/blockBtn_Receipt_Search.png');
+}
+.hrc-entrance-q5
+{
+    background-image: url('images/blockBtn_Receipt_Search.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.hrc-entrance-q6:hover
+{
+    background-image: url('images/blockBtn_Receivable_Search.png');
+}
+.hrc-entrance-q6
+{
+    background-image: url('images/blockBtn_Receivable_Search.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.hrc-entrance-q7:hover
+{
+    background-image: url('images/blockBtn_Affirm_Serach.png');
+}
+.hrc-entrance-q7
+{
+    background-image: url('images/blockBtn_Affirm_Serach.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.hrc-entrance-q8:hover
+{
+    background-image: url('images/blockBtn_Settlement_Serach.png');
+}
+.hrc-entrance-q8
+{
+    background-image: url('images/blockBtn_Settlement_Serach.png');
+    width: 86px;
+    height: 86px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+   .hrc-entrance-q9 
+ { 
+     background-image: url(images/hrc-q9.png); 
+     width: 70px; 
+     height: 74px; 
+     display: inline-block; 
+     vertical-align: middle; 
+     background-repeat: no-repeat; 
+     cursor: pointer; 
+  }
+ .hrc-entrance-q9:hover 
+ { 
+     background-image:url(images/hrc-q9Hover.png); 
+  }        
+        
+body
+{
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #333;
+    line-height: 20px;
+    text-align: left;
+    font-family: Tahoma,Verdana,Lucida,Arial,Helvetica,sans-serif;
+}
+        
+.main
+{
+    background-color: White;
+}
+        
+.main
+{
+    min-width: 940px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    margin: 0 auto;
+    width: 1026px;
+    height: 1080px;
+    box-shadow: 0 0 3px #c9c9c9;
+    -moz-box-shadow: 0 0 3px #c9c9c9;
+    -webkit-box-shadow: 0 0 3px #c9c9c9;
+    margin-top: 12px;
+}
+.main .home_left {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 784px;
+    height: 1080px;
+}
+.main .home_right
+{
+    display: block;
+    float: right;
+    left: 0;
+    width: 230px;
+    height: 1080px;
+    background-color: #f9f9f9;
+    border-left: 2px solid #f0f0f0;
+}
+.box
+{
+    padding: 15px;
+    border: 0px solid #b6d9eb;
+    background-image: none;
+    margin-bottom: 10px;
+}
+        
+.fms-title
+{
+    font-family: Microsoft Yahei,微软雅黑,Microsoft YaHei;
+    font-size: 22px;
+    color: #329632;
+}
+.vline .vlineTitle {
+font-family: Microsoft Yahei,微软雅黑,Microsoft YaHei;
+font-size: 18px;
+color: #333;
+}       
+.fms-title span
+{
+    font-family: 微软雅黑,Microsoft YaHei;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #ccc;
+}
+.fms-boxheader
+{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    line-height: 30px;
+    height: 30px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+}
+.entery_title_item
+{
+    background: none;
+    margin: 35px 0px 5px;
+}
+.entery_title_item h5
+{
+    padding-bottom: 5px;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px 0px;
+    font-family: Microsoft YaHei, SimHei;
+}
+.pl20
+{
+    font: 12px tahoma, SimSun;
+    color: #666;
+}
+.pl20 a
+{
+    font: 12px tahoma, SimSun;
+    color: #666;
+}
+.pl20 a:hover
+{
+    font: 12px tahoma, SimSun;
+    color: #666;
+}
+        
+        
+.pl20
+{
+    padding-left: 10px;
+}
+.boxcontent .pl20
+{
+    padding-left: 20px;
+}
+.LeftSubBlock1
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.footer
+{
+    color: gray;
+    text-align: center;
+    clear: both;
+    width: 650px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 25px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    background: none;
+    background-image: none;
+    padding-bottom: 30px;
+}
+.InfoLine
+{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    font-family: Microsoft Yahei,微软雅黑,Microsoft YaHei;
+}
+    
+.InfoLine span b
+{
+    color:#333;
+    font-weight:bold;
+}    
+.vline .title
+{
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    background-color: #f9f9f9;
+    position: relative;
+    border: 0px solid #BEDDED;
+    font-family: Microsoft Yahei,微软雅黑,Microsoft YaHei;
+    font-size: 20px;
+    color: #329632;
+    padding-top: 15px;
+    padding-top: 35px;
+}
+.vline .content
+{
+    border-style: none solid solid solid;
+    border-width: 0px;
+    border-color: #BEDDED;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 5px 10px 10px 10px;
+    font-size: 14px;
+}
+.hrc-divider
+{
+    border-top: solid 1px #e5e5e5;
+    border-bottom: solid 1px #FFF;
+    font-size: 0;
+    overflow: hidden;
+    clear: both;
+    height: 0px;
+    _height: '';
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 208px;
+}
+.rightMemu li
+{
+    border-top: 0px dashed #9FD3F2;
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.rightMemu li a
+{
+    font-size: 14px;
+    color: #666;
+}
+.rightMemu li a:hover
+{
+    color: #690;
+    text-decoration: none;
+}
+        
+.expPayBtnli a
+{
+    font-size: 14px;
+    color: #666;
+}
+.expPayBtnli li a:hover
+{
+    color: #690;
+    text-decoration: none;
+}
+        
+.expBtns li > a
+{
+    font-size: 14px;
+    color: #390;
+    font-weight: normal;
+}
+.expPayBtn a
+{
+    background-image: none;
+}
+        
+.expBtns li a:hover
+{
+    color: #390;
+    text-decoration: none;
+}
+.consultBlock .text
+{
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #8c9195;
+    font-family: Microsoft YaHei, SimHei, Tahoma, Verdana, Arial;
+}
+.consultText
+{
+    color: #666;
+    font-size: 12px;
+}
+.consultText .number
+{
+    color: #DF0B17;
+    display: block;
+    font-family: tahoma;
+    font-size: 18px;
+    height: 32px;
+}
+.consultBlock
+{
+    padding-left: 10px;
+}
+.pl20 .num {
+    float: left;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 15px;
+    text-align: center;
+    font-style: normal;
+    font: bold 14px Microsoft Yahei;
+    background: #8fc13e;
+    color: #fff;
+} 
+.pl20 .bold {
+color: #333;
+font-size: 14px;
+}     
+.entery_title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    border-width: 0px;
+}
+.entery_title ul {
+    margin: 0;
+    padding: 0;
+}
+.entery_title li {
+    width: 180px;
+}
+.entery_title li {
+    float: left;
+    list-style: none;
+    width: 180px;
+    height: 100px;
+    background-repeat: no-repeat;
+    list-style: none;
+    margin-top: 30px;
+}
+.entery_title a {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    text-decoration:none;
+    font-family: Microsoft Yahei,微软雅黑,Microsoft YaHei;
+}
+.entery_title a:hover {
+    color: #690;
+    text-decoration:none;
+}
+.entery_title a span {
+    display: block;
+}
+        
+ul, li
+{
+    list-style: none;
+    padding:0 0;
+}
+.fms-title
+{
+    margin:10px 0px 5px 20px;
+}
+.expBtns li > a {
+    font-size: 14px;
+    color: #390;
+    font-weight: normal;
+    padding-left:0px;
+    padding:5px 0px 0px 0px;
+}
+.home_right a
+{
+    text-decoration:none;
+    font-family: Microsoft YaHei, SimHei, Tahoma, Verdana, Arial;
+}
+.home_right a:hover
+{
+    text-decoration:none;
+    color:#390;
+    font-family: Microsoft YaHei, SimHei, Tahoma, Verdana, Arial;
+}
+.content .pl20 a
+{
+    font: 14px tahoma, SimSun;
+    color: #390;
+    font-family: Microsoft YaHei, SimHei, Tahoma, Verdana, Arial;
+}
+.content .pl20 li
+{
+    padding:2px 0px;
+}
+.boxcontent .pl20 li
+{
+    padding:5px 10px;
+    font-family: Microsoft YaHei, SimHei, Tahoma, Verdana, Arial;
+}
+.fms-box
+{
+    padding:0px 15px;
+    border: 0px solid #b6d9eb;
+    background-image: none;
+    margin-bottom: 0px;
+    right: 0%;
+}
+.contacts-title
+{
+    margin: 10px 0px 5px 0px;
+}

@@ -1,0 +1,346 @@
+﻿@model HZAU.GP.DataMonitor.Entity.BizEntity.SchemeEntity
+<div class="box searchBox compact">
+    <div class="boxheader">
+        <div class="title">
+            基本信息
+        </div>
+    </div>
+    <div class="boxcontent">
+        <ul class="input">
+            <li class="showLi">
+                <div class="l">
+                    方案名称:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @Html.EditorFor(m => m.SCHEME_NAME)
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.SCHEME_NAME)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    模块:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            var noSelectItem = new SelectListItem { Text = "未选择", Value = "", Selected = true };
+                            List<SelectListItem> moduleSelectList = new List<SelectListItem> { noSelectItem };
+                            moduleSelectList.Add(new SelectListItem() { Text = "学生", Value = "学生" });
+                            moduleSelectList.Add(new SelectListItem() { Text = "老师", Value = "老师" });
+                            @Html.DropDownListFor(m => m.MODULE_ID, moduleSelectList, new { style = "width:253px" })
+                        }
+                    </div>
+                    <div>
+                        @Html.ValidationMessageFor(m => m.MODULE_ID)
+                    </div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    执行方式:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            List<SelectListItem> resultSelectList = new List<SelectListItem> { noSelectItem };
+                            resultSelectList.Add(new SelectListItem() { Text = "自动", Value = "2" });
+                            resultSelectList.Add(new SelectListItem() { Text = "手动", Value = "1" });
+                            @Html.DropDownListFor(m => m.EXECUTE_TYPE_ID, resultSelectList, new { style = "width:253px" })
+                        }
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.EXECUTE_TYPE_ID)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    执行周期:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            List<SelectListItem> cycleSelectList = new List<SelectListItem> { noSelectItem };
+                            cycleSelectList.Add(new SelectListItem() { Text = "1", Value = "1" });
+                            cycleSelectList.Add(new SelectListItem() { Text = "7", Value = "2" });
+                            cycleSelectList.Add(new SelectListItem() { Text = "15", Value = "3" });
+                            cycleSelectList.Add(new SelectListItem() { Text = "30", Value = "4" });
+                            @Html.DropDownListFor(m => m.EXECUTE_CYCLE_ID, cycleSelectList, new { style = "width:253px" })
+                        }
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.EXECUTE_CYCLE_ID)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    通知方式:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+
+                            List<SelectListItem> methodSelectList = new List<SelectListItem> { noSelectItem };
+                            methodSelectList.Add(new SelectListItem() { Text = "邮件", Value = "mail" });
+                            @Html.DropDownListFor(m => m.NOTICE_TYPE_ID, methodSelectList, new { style = "width:253px" })
+                        }
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.NOTICE_TYPE_ID)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    通知相关人:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @Html.EditorFor(m => m.NOTICE_TO)
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.NOTICE_TO)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    脚本类型:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            List<SelectListItem> sqlTypeSelectList = new List<SelectListItem> { noSelectItem };
+                            sqlTypeSelectList.Add(new SelectListItem() { Text = "SQL脚本", Value = "sql" });
+                            sqlTypeSelectList.Add(new SelectListItem() { Text = "存储过程", Value = "procedure" });
+                            @Html.DropDownListFor(m => m.SQL_TYPE_ID, sqlTypeSelectList, new { style = "width:253px" })
+                        }
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.SQL_TYPE_ID)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    开始执行时间：<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div>
+                        @Html.TextBoxFor(m => m.START_TIME, new { style = "width:253px", Id = "StartTimeId" })
+                    </div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    脚本:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @Html.TextAreaFor(m => m.SQL_TEXT, new { cols = 130, rows = 5 })
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.SQL_TEXT)</div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    说明:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @Html.TextAreaFor(m => m.REMARK, new { cols = 130, rows = 5 })
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.REMARK)</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        initSelectList();
+        initAutoComplete();
+        setTime();
+    });
+    function addScheme() {
+        var schemeData = {
+            PK_ID: $("#PK_ID").val(),
+            STAMP: $("#STAMP").val(),
+            SCHEME_ID: $("#SCHEME_ID").val(),
+            SCHEME_NAME: $("#SCHEME_NAME").val(),
+            MODULE_ID: $("#MODULE_ID").val(),
+            SQL_TYPE_ID: $("#SQL_TYPE_ID").val(),
+            SQL_TEXT: $("#SQL_TEXT").val(),
+            EXECUTE_TYPE_ID: $("#EXECUTE_TYPE_ID").val(),
+            NOTICE_TYPE_ID: $("#NOTICE_TYPE_ID").val(),
+            NOTICE_TO: $("#NOTICE_TO").val(),
+            EXECUTE_CYCLE_ID: $("#EXECUTE_CYCLE_ID").val(),
+            START_TIME: $("#StartTimeId").val(),
+            REMARK: $("#REMARK").val()
+        };
+        schemeData.STAMP = new Date();
+        if (schemeData.MODULE_ID == "") {
+            alert("模块不能为空");
+            return;
+        }
+        if (schemeData.SCHEME_NAME == "") {
+            alert("方案名称不能为空");
+            return;
+        }
+        if (schemeData.SQL_TYPE_ID == "") {
+            alert("脚本类型不能为空");
+            return;
+        }
+        if (schemeData.EXECUTE_TYPE_ID == "") {
+            alert("执行方式不能为空");
+            return;
+        }
+        if (schemeData.NOTICE_TYPE_ID == "") {
+            alert("通知方式不能为空");
+            return;
+        }
+        if (schemeData.NOTICE_TO == "") {
+            alert("通知相关人不能为空");
+            return;
+        }
+        if (schemeData.NOTICE_TYPE_ID == "mail" && !checkMail(schemeData.NOTICE_TO)) {
+            return;
+        }
+        if (schemeData.SQL_TEXT == "") {
+            alert("脚本不能为空");
+            return;
+        }
+        var sqltext = schemeData.SQL_TEXT;
+        sqltext = sqltext.toLowerCase();
+        if (sqltext.indexOf("insert ") >= 0 || sqltext.indexOf("delete ") >= 0 ||
+        sqltext.indexOf("drop ") >= 0 || sqltext.indexOf("alter ") >= 0) {
+            alert("脚本检查不合法！");
+            return;
+        }
+        schemeData.SQL_TEXT = processSqlText(schemeData.SQL_TEXT);
+        if (schemeData.REMARK == "") {
+            alert("说明不能为空");
+            return;
+        }
+        var jsondata = $.toJSON(schemeData);
+        var url = '@Url.Action("AjaxAddScheme", "DataMonitor")';
+        submitjsondataforajax(url, jsondata, function (data) {
+            if (data.message == "OK") {
+                alert("保存成功");
+                document.location.href = '@Url.Action("ExecuteCheckScheme", "DataMonitor")';
+            }
+            else {
+                alert("保存失败");
+            }
+        });
+    }
+
+    function checkMail(NOTICE_TO){
+        /*在.NET正则表达式中@@代表@字符*/
+        var regp = /^([a-zA-Z0-9_-])+@@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (!regp.test(NOTICE_TO)){
+            alert('邮件格式不正确');
+            return false;
+        }
+        return true;
+    }
+
+    function submitjsondataforajax(url, jsondata, callback) {
+        $.postJson({
+            url: url,
+            data: jsondata,
+            success: function (response) {
+                if ($.isFunction(callback)) {
+                    callback(response);
+                }
+            }
+        });
+    }
+
+    function initSelectList() {
+        //var moduleOpts = global_Options.multiselectOpts();
+        //moduleOpts.multiple = false;
+        //$("#MODULE_ID").multiselect(moduleOpts).multiselectfilter(
+        //global_Options.multiselectFilterOpts);
+
+        //var sqlTypeOpts = global_Options.multiselectOpts();
+        //sqlTypeOpts.multiple = false;
+        //$("#SQL_TYPE_ID").multiselect(sqlTypeOpts).multiselectfilter(
+        //global_Options.multiselectFilterOpts);
+
+        //var cycleTypeOpts = global_Options.multiselectOpts();
+        //cycleTypeOpts.multiple = false;
+        //$("#EXECUTE_CYCLE_ID").multiselect(cycleTypeOpts).multiselectfilter(
+        //global_Options.multiselectFilterOpts);
+
+        //var executeTypeOpts = global_Options.multiselectOpts();
+        //executeTypeOpts.multiple = false;
+        //$("#EXECUTE_TYPE_ID").multiselect(executeTypeOpts).multiselectfilter(
+        //global_Options.multiselectFilterOpts);
+
+        //var noticeTypeOpts = global_Options.multiselectOpts();
+        //noticeTypeOpts.multiple = false;
+        //$("#NOTICE_TYPE_ID").multiselect(noticeTypeOpts).multiselectfilter(
+        //global_Options.multiselectFilterOpts);
+    }
+
+    //        function initAutoComplete(){
+    //            $("#NOTICE_TO").autocomplete({
+    //                source: '@Url.Action("AjaxGetUserNameInputHelper", "Site")',
+    //                minLength: 2
+    //            });
+    //        }
+
+    function initAutoComplete() {
+        @*$("#NOTICE_TO").autocomplete({
+                 source: function (request, response) {
+                     var url = '@Url.Action("AjaxGetUserNameInputHelper", "Site")';
+                     var term = request.term;
+                     var values = term.split(";");
+                     var len = values.length;
+                     if (len > 1) {
+                         key = $.trim(values[len - 1]);
+                         if (key.length < 2) {
+                             return;
+                         }
+                         request.term = key;
+                     }
+                     $.getJSON(url, request, function (data, status, xhr) {
+                         response(data);
+                     });
+                 },
+                 minLength: 2,
+                 select: function (event, ui) {
+                     val = ui.item.value;
+                     var oldVal = $(event.target).val();
+                     var arrVal = oldVal.split(";");
+                     arrVal.pop();
+                     arrVal.push(val);
+                     var newVal = arrVal.join("; ");
+                     $(event.target).val(newVal);
+                     return false;
+                 }
+             });*@
+    }
+    //设置开始时间的日期
+    function setTime() {
+        var curDate = new Date();
+        $("#StartTimeId").datepicker({
+            dateFormat: global_Options.datePickerOpt.dateFormat,
+            changeYear: true,
+            changeMonth: true
+        });
+
+        $("#StartTimeId").datepicker("setDate", curDate);
+    }
+    function processSqlText(sqlText) {
+        sqlText = sqlText.trim();
+        var len = sqlText.length;
+        if (sqlText[len - 1] == ';') {
+            sqlText = sqlText.substr(0, len - 1);
+            sqlText = sqlText.trim();
+        }
+        var reg = new RegExp("[ \n][ \n]*");
+        var sqlTestList = sqlText.split(reg);
+        var newSqlText = "";
+        len = sqlTestList.length;
+        for (var i = 0; i < len; ++i) {
+            newSqlText += sqlTestList[i];
+            if (i < len - 1) newSqlText += " ";
+        }
+        return newSqlText;
+    }
+</script>

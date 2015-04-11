@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "新增检查方案";
+}
+@model HZAU.GP.DataMonitor.Entity.BizEntity.SchemeEntity
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "main mainInput" }))
+{ 
+    <div class="floatbuttonlist">
+        <input id="SchemeSave" name="SchemeSave" type="button" value="保存" class="greenBtn" onclick="addScheme()" />
+    </div>
+    @Html.Partial("DataMonitor/AddCheckScheme");
+}
+@*@section path{
+    数据监控 > @Html.ActionLink("添加检查方案", "AddCheckScheme")
+}*@

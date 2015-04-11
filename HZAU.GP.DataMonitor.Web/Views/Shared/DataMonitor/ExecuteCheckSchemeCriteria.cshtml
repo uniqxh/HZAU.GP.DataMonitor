@@ -1,0 +1,164 @@
+﻿@model HZAU.GP.DataMonitor.Entity.SearchResult.SchemeSearchResult
+<div class="box searchBox compact">
+    <div class="boxheader">
+        <div class="title">
+            查询条件<span class="link"><i class="ico-worktable"></i><span style="color:#949494">|</span>
+            <a onclick="$('.searchBox .boxcontent').toggle()">隐藏/显示</a></span>
+        </div>
+    </div>
+    <div class="boxcontent">
+        <ul class="input">
+            <li class="showLi">
+                <div class="l">
+                    模块:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            var noSelectItem = new SelectListItem { Text = "未选择", Value = "", Selected = true };
+                            List<SelectListItem> moduleSelectList = new List<SelectListItem> { noSelectItem };
+                            moduleSelectList.Add(new SelectListItem() { Text = "学生", Value = "学生" });
+                            moduleSelectList.Add(new SelectListItem() { Text = "老师", Value = "老师" });
+                            @Html.DropDownListFor(m=>m.SchemeSearchCriteria.MODULE_ID,moduleSelectList,new { Id="ModuleId", style="width:253px"})
+                        }
+                    </div>
+                    <div>
+                        @Html.ValidationMessageFor(m => m.SchemeSearchCriteria.MODULE_ID)
+                    </div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    检查名称:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @Html.EditorFor(m=>m.SchemeSearchCriteria.SCHEME_NAME)
+                    </div>
+                    <div>
+                        @Html.ValidationMessageFor(m=>m.SchemeSearchCriteria.SCHEME_NAME)
+                    </div>
+                </div>
+            </li>
+            <li class="showLi">
+                <div class="l">
+                    脚本类型:<span class="inputpadding"></span>
+                </div>
+                <div class="f2">
+                    <div class="fw">
+                        @{
+                            List<SelectListItem> sqlTypeSelectList = new List<SelectListItem> { noSelectItem };
+                            sqlTypeSelectList.Add(new SelectListItem() { Text = "SQL脚本", Value = "sql" });
+                            sqlTypeSelectList.Add(new SelectListItem() { Text = "存储过程", Value = "procedure" });
+                            @Html.DropDownListFor(m => m.SchemeSearchCriteria.SQL_TYPE_ID, sqlTypeSelectList, new { Id="SqlTypeId", style = "width:253px" })
+                        }
+                    </div>
+                    <div>@Html.ValidationMessageFor(m => m.SchemeSearchCriteria.SQL_TYPE_ID)</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function getFormData() {
+        var querystring = $("form li.showLi *").serialize();
+        return querystring;
+    }
+
+    $(document).ready(function () {
+        var url = '@Url.Action("AjaxExecuteCheckScheme","DataMonitor")';
+        var opts = global_Options.jQGridOpts();
+        opts.data = [];
+        opts.type = 'local';
+        opts.url = url + '?' + getFormData();
+        opts.pager = "#pager";
+        opts.mtype = "POST";
+        opts.autowidth = true;
+        opts.rowNum = 50;
+        opts.sortorder = "desc";
+        opts.colNames = default_ColNames;
+        opts.colModel = default_ColModel;
+        opts.caption = "<span class='title'>检查方案列表</span>";
+        $("#tbSearchList").jqGrid(opts);
+
+        //initSelectList();
+
+        $("#btnExecuteId").bind("click", function () {
+            $("#tbSearchList").jqGrid('setGridParam', { page: 1, url: url + '?' + getFormData(), datatype: 'json' }).trigger("reloadGrid");
+        });
+    });
+
+    function setEnable(stamp, PKID) {
+        var tblId = "#tbSearchList";
+        var url = '@Url.Action("AjaxSetSchemeEffective", "DataMonitor")';
+        url = url + "?pkId=" + PKID + "&isEffective=1&stamp=" + stamp;
+        submitJsonDataForAjax(url, function (data) {
+            if (data.message == "OK") {
+                $(tblId).trigger("reloadGrid");
+            }
+            else {
+                alert("启用失败," + data.message);
+            }
+        });
+    }
+
+    function setDisable(stamp, PKID) {
+        var tblId = "#tbSearchList";
+        var url = '@Url.Action("AjaxSetSchemeEffective", "DataMonitor")';
+        url = url + "?pkId=" + PKID + "&isEffective=0&stamp=" + stamp;
+        submitJsonDataForAjax(url, function (data) {
+            if (data.message == "OK") {
+                $(tblId).trigger("reloadGrid");
+            }
+            else {
+                alert("禁用失败," + data.message);
+            }
+        });
+    }
+
+    function downloadFile(aObj, pkId) {
+        var tblId = "#tbSearchList";
+        var url = '@Url.Action("AjaxExportSchemeToExcel", "DataMonitor")';
+        url = url + "?pkId=" + pkId;
+        exportExcel(url, "POST", function () {
+            $(aObj).text("正在下载...");
+            $(aObj).off("click");
+        }, function () {
+            $(aObj).text("下载");
+            $(aObj).on("click", downloadFile);
+        }, function (s) {
+            var err = $.parseJSON(s.responseText);
+            alert(err.ErrorMessage);
+        });
+    }
+
+
+    function initSelectList() {
+        var moduleOpts = global_Options.multiselectOpts();
+        moduleOpts.multiple = false;
+        $("#ModuleId").multiselect(moduleOpts).multiselectfilter(
+        global_Options.multiselectFilterOpts);
+
+        var sqlTypeOpts = global_Options.multiselectOpts();
+        sqlTypeOpts.multiple = false;
+        $("#SqlTypeId").multiselect(sqlTypeOpts).multiselectfilter(
+        global_Options.multiselectFilterOpts);
+    }
+
+    //提交json数据至server
+    //url:提交的url地址
+    //jsonData:提交的json格式数据
+    //callBack:回调函数
+    //refreshUrl:刷新数据时的url
+    function submitJsonDataForAjax(url, callBack) {
+        $.postJson({
+            url: url,
+            success: function (response) {
+                if ($.isFunction(callBack)) {
+                    callBack(response);
+                }
+            }
+        });
+    }
+</script>

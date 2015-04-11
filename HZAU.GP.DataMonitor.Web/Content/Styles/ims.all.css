@@ -1,0 +1,32 @@
+﻿.browseSummaryTips
+{
+    position:absolute; 
+    top:90px; 
+    left:80%; 
+    width:200px; 
+    height:250px; 
+    background-color:#FFF0D9; 
+    border:1px solid orange; 
+    text-align:right
+}
+.browseSummaryTips Li
+{
+    list-style-type:none;
+    display:inline;
+    line-height:25px;
+}
+
+.browseSummaryTips Li .leftDiv
+{
+    float:left;
+}
+
+.gridLink
+{
+    color:#126AA8;
+}
+.gridLink:hover
+{
+   text-decoration: underline;
+   cursor: pointer;
+}

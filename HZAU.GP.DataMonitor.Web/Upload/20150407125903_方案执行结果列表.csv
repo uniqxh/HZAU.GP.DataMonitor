@@ -1,9 +1,0 @@
-PK_ID,STAMP,SCHEME_ID,SCHEME_NAME,MODULE_ID,SQL_TYPE_ID,SQL_TEXT,EXECUTE_TYPE_ID,NOTICE_TYPE_ID,NOTICE_TO,EXECUTE_CYCLE_ID,START_TIME,IS_EFFECTIVE,STATUS,REMARK,CREATE_DATE,CREATE_BY,CREATE_BY_NAME,UPDATE_DATE,UPDATE_BY,UPDATE_BY_NAME
-19,20-3月 -15 02.44.31.000000 下午,SHM20150320144431,test,学生,sql,select * from mnt_scheme,2,mail,525799145@qq.com,3,20-3月 -15,1,生效,select * from mnt_scheme,20-3月 -15,0,system,,,
-20,20-3月 -15 08.21.31.000000 下午,SHM20150320202131,test,老师,sql,select * from mnt_scheme where PK_ID = 18,2,mail,525799145@qq.com,3,20-3月 -15,1,生效,select * from mnt_scheme where PK_ID = 18,20-3月 -15,0,system,,,
-21,20-3月 -15 08.22.26.000000 下午,SHM20150320202226,test,老师,sql,select * from mnt_scheme where PK_ID = 20,2,mail,525799145@qq.com,3,20-3月 -15,1,生效,select * from mnt_scheme where PK_ID = 20,20-3月 -15,0,system,,,
-31,25-3月 -15 12.42.39.000000 下午,SHM20150325124239,tetete,老师,procedure,IMS_DATAMONITOR_PKG.test,2,mail,525799145@qq.com,3,25-3月 -15,1,生效,IMS_DATAMONITOR_PKG.test,25-3月 -15,0,system,,,
-32,27-3月 -15 02.19.12.000000 下午,SHM20150327141912,testtsdtsd,老师,sql,select * from mnt_scheme,1,mail,525799145@qq.com,3,27-3月 -15,1,生效,select * from mnt_scheme,27-3月 -15,0,system,,,
-41,03-4月 -15 12.58.54.000000 下午,SHM20150403125854,qqinfo,学生,procedure,IMS_DATAMONITOR_PKG.qqInfo,2,mail,525799145@qq.com,1,03-4月 -15,1,生效,IMS_DATAMONITOR_PKG.qqInfo,03-4月 -15,0,system,,,
-51,05-4月 -15 03.35.32.000000 下午,SHM20150405153532,236523jdsfhkjdfhnvkjf,老师,sql,select * from qqInfo where q_name = '周新华',2,mail,525799145@qq.com,1,05-4月 -15,1,生效,select * from qqInfo where q_name = '周新华' ,05-4月 -15,0,system,,,
-52,05-4月 -15 04.11.08.000000 下午,SHM20150405161108,236523jdsfhkjdfhnvkjf,老师,sql,select * from qqInfo where q_name = '周新华',2,mail,525799145@qq.com,1,05-4月 -15,1,生效,select * from qqInfo where q_name = '周新华' ,05-4月 -15,0,system,,,
